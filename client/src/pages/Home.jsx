@@ -25,7 +25,8 @@ const Home = () => {
     setResults(null);
 
     try {
-      const response = await axios.get('/api/dados', {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/dados`
+, {
         params: { nome: summonerName, tag: summonerTag, tipo: dataType }
       });
       setResults(response.data);
